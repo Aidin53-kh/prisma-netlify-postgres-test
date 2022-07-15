@@ -1,17 +1,17 @@
 import React from "react";
-import type { GetStaticProps } from "next";
+import type { GetServerSideProps } from "next";
 import { db } from "../../prisma/db";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
     const users = await db.user.findMany();
-    console.log(users);
+
     return {
         props: { users },
     };
 };
 
 function Home({ users }: any) {
-    console.log(users);
+
     return (
         <div>
             <h2 className="text-xl">All User</h2>

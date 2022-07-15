@@ -18,7 +18,7 @@ function Home({ users }: any) {
             <div className="my-8">
                 {users.map((user) => {
                     return (
-                        <div className="p-4 m-4 border rounded-t-md">
+                        <div key={user.id} className="p-4 m-4 border rounded-t-md">
                             <p>name: {user.username}</p>
                             <p>email: {user.email}</p>
                         </div>
